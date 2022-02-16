@@ -1,0 +1,1 @@
+<a href="?mod=admin">Admin</a>

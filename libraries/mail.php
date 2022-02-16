@@ -58,7 +58,7 @@ class objMailer
             $mail->Port       = self::$port;
 
             //Recipients
-            $mail->setFrom(self::$username, 'Mailer');
+            $mail->setFrom(self::$username, 'Pizzeria');
             $mail->addAddress(self::$email);
 
             //Content
