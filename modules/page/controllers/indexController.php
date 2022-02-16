@@ -7,7 +7,7 @@
 	
 	function indexAction()
 	{
-
+		load_view('index');
 	}
 
 ?>
