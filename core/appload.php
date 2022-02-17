@@ -30,8 +30,11 @@ if (is_array($autoload)) {
     }
 }
 
+session_start();
+
 //connect db
 db_connect($db);
+
 //create mailer
 new objMailer($mail);
 
