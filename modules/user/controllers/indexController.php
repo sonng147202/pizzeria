@@ -7,12 +7,5 @@
 	
 	function indexAction()
 	{
-		load_view('home');
+		load_view('index');
 	}
-
-	function Err404Action()
-	{
-		load_view('404');
-	}
-
-?>
