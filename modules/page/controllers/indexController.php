@@ -10,4 +10,9 @@
 		load_view('index');
 	}
 
+	function Err404Action()
+	{
+		load_view('404');
+	}
+
 ?>

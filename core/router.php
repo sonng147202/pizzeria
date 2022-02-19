@@ -1,16 +1,20 @@
 <?php
 //Triệu gọi đến file xử lý thông qua request
 
-if(isset($_SESSION['user']['role_id'])) {
-    if ($_SESSION['user']['role_id'] == 1) {
-        $config['default_module'] = 'admin';
-    }
-    if ($_SESSION['user']['role_id'] == 2) {
-        $config['default_module'] = 'page';
-    }
+if (is_admin()) {
+    $config['default_module'] = 'admin';
+}
+if (is_user()) {
+    $config['default_module'] = 'page';
 }
 
-$request_path = MODULESPATH . DIRECTORY_SEPARATOR . get_module() . DIRECTORY_SEPARATOR . 'controllers' . DIRECTORY_SEPARATOR . get_controller().'Controller.php';
+$route_mod = get_module();
+
+$route_controllers = get_controller();
+
+$route_action = get_action();
+
+$request_path = MODULESPATH . DIRECTORY_SEPARATOR . $route_mod . DIRECTORY_SEPARATOR . 'controllers' . DIRECTORY_SEPARATOR . $route_controllers .'Controller.php';
 
 if (file_exists($request_path)) {
     require $request_path;
@@ -18,6 +22,6 @@ if (file_exists($request_path)) {
     echo "Không tìm thấy:$request_path ";
 }
 
-$action_name = get_action().'Action';
+$action_name = $route_action.'Action';
 
 call_function(array('construct', $action_name));
