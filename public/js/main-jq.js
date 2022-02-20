@@ -5,6 +5,7 @@ $(document).ready(function () {
             .then(response => response.json())
             .then(data => {
                 const arr = data.arr_products;
+                console.log(data);
                 
                 const str = $.map(arr, function (element) {
                     var price = parseInt(element.prodc_price).toLocaleString('vi-VN');
