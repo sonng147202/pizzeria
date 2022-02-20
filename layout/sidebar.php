@@ -33,6 +33,11 @@
                     Lorem ipsum dolor sit amet.
                 </div>
             </div>
+            <div class="">
+                <a href="?mod=auth&action=logout">
+                    <i class='bx bx-log-out'></i>
+                </a>
+            </div>
         </div>
     </div>
 </nav>
