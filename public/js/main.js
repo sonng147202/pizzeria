@@ -1,7 +1,7 @@
 const body = document.querySelector("body"),
       nav = document.querySelector("nav"),
       modeToggle = document.querySelector(".dark-light"),
-      searchToggle = document.querySelector(".cartToggle"),
+      searchToggle = document.querySelector(".bellToggle"),
       sidebarOpen = document.querySelector(".sidebarOpen"),
       siderbarClose = document.querySelector(".siderbarClose");
 

@@ -26,8 +26,8 @@ img{
     --nav-color: #f39c12;
     --side-nav: #010718;
     --text-color: #FFF;
-    --cart-bar: #F2F2F2;
-    --cart-text: #010718;
+    --bell-bar: #F2F2F2;
+    --bell-text: #010718;
 }
 
 body{
@@ -40,7 +40,7 @@ body.dark{
     --nav-color: #242526;
     --side-nav: #242526;
     --text-color: #CCC;
-    --cart-bar: #242526;
+    --bell-bar: #242526;
 }
 
 nav{
@@ -126,13 +126,13 @@ nav .nav-bar .logo a{
     opacity: 1;
 }
 
-.nav-bar .darkLight-cartBox{
+.nav-bar .darkLight-bellBox{
     display: flex;
     align-items: center;
 }
 
-.darkLight-cartBox .dark-light,
-.darkLight-cartBox .cartToggle{
+.darkLight-bellBox .dark-light,
+.darkLight-bellBox .bellToggle{
     height: 40px;
     width: 40px;
     display: flex;
@@ -142,7 +142,7 @@ nav .nav-bar .logo a{
 }
 
 .dark-light i,
-.cartToggle i{
+.bellToggle i{
     position: absolute;
     color: var(--text-color);
     font-size: 22px;
@@ -165,30 +165,30 @@ nav .nav-bar .logo a{
     pointer-events: none;
 }
 
-.cartToggle i.cancel{
+.bellToggle i.cancel{
     opacity: 0;
     pointer-events: none;
 }
 
-.cartToggle.active i.cancel{
+.bellToggle.active i.cancel{
     opacity: 1;
     pointer-events: auto;
 }
 
-.cartToggle.active i.cart{
+.bellToggle.active i.bell{
     opacity: 0;
     pointer-events: none;
 }
 
-.cartBox{
+.bellBox{
     position: relative;
 }
 
-.cartBox .cart-field{
+.bellBox .bell-field{
     position: absolute;
     bottom: -85px;
     right: 5px;
-    height: 50px;
+    height: auto;
     width: 300px;
     display: flex;
     align-items: center;
@@ -201,13 +201,13 @@ nav .nav-bar .logo a{
     transition: all 0.3s ease;
 }
 
-.cartToggle.active ~ .cart-field{
+.bellToggle.active ~ .bell-field{
     bottom: -74px;
     opacity: 1;
     pointer-events: auto;
 }
 
-.cart-field::before{
+.bell-field::before{
     content: '';
     position: absolute;
     right: 14px;
@@ -219,7 +219,7 @@ nav .nav-bar .logo a{
     z-index: -1;
 }
 
-.cart-field input{
+.bell-field input{
     height: 100%;
     width: 100%;
     padding: 0 45px 0 15px;
@@ -228,15 +228,15 @@ nav .nav-bar .logo a{
     border-radius: 4px;
     font-size: 14px;
     font-weight: 400;
-    color: var(--cart-text);
-    background-color: var(--cart-bar);
+    color: var(--bell-text);
+    background-color: var(--bell-bar);
 }
 
-body.dark .cart-field input{
+body.dark .bell-field input{
     color: var(--text-color);
 }
 
-.cart-field i{
+.bell-field i{
     position: absolute;
     color: var(--nav-color);
     right: 15px;
@@ -244,7 +244,7 @@ body.dark .cart-field input{
     cursor: pointer;
 }
 
-body.dark .cart-field i{
+body.dark .bell-field i{
     color: var(--text-color);
 }
 
@@ -329,4 +329,112 @@ body.dark .cart-field i{
 
 .product-price{
 
+}
+
+/* bell */
+.size span {
+    font-size: 11px
+}
+
+.color span {
+    font-size: 11px
+}
+
+.product-deta {
+    margin-right: 70px
+}
+
+.gift-card:focus {
+    box-shadow: none
+}
+
+.pay-button {
+    color: #fff
+}
+
+.pay-button:hover {
+    color: #fff
+}
+
+.pay-button:focus {
+    color: #fff;
+    box-shadow: none
+}
+
+.text-grey {
+    color: #a39f9f
+}
+
+.qty i {
+    font-size: 11px
+}
+
+.quantity {
+    position: relative;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]
+{
+    -moz-appearance: textfield;
+}
+
+.quantity input {
+    width: 70px;
+    height: 42px;
+    line-height: 1.65;
+    float: left;
+    display: block;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    border: 1px solid #eee;
+}
+
+.quantity input:focus {
+    outline: 0;
+}
+
+.quantity-nav {
+    float: left;
+    position: relative;
+    height: 42px;
+}
+
+.quantity-button {
+    position: relative;
+    cursor: pointer;
+    border-left: 1px solid #eee;
+    width: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+    line-height: 1.7;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.quantity-button.quantity-up {
+    position: absolute;
+    height: 50%;
+    top: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+    position: absolute;
+    bottom: -1px;
+    height: 50%;
 }

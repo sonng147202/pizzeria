@@ -17,26 +17,33 @@
             </ul>
         </div>
 
-        <div class="darkLight-cartBox">
+        <div class="darkLight-bellBox">
             <div class="dark-light">
                 <i class='bx bx-moon moon'></i>
                 <i class='bx bx-sun sun'></i>
             </div>
 
-            <div class="cartBox">
-                <div class="cartToggle">
+            <div class="bellBox">
+                <div class="bellToggle">
                     <i class='bx bx-x cancel'></i>
-                    <i class='bx bx-cart-alt cart'></i>
+                    <i class='bx bx-bell bell' ></i>
+                    <!-- bx-tada: cho vào "<i class='bx bx-bell bell' ></i>" làm hiệu ứng rung chuông -->
                 </div>
 
-                <div class="cart-field">
+                <div class="bell-field">
                     Lorem ipsum dolor sit amet.
                 </div>
             </div>
-            <div class="">
-                <a href="?mod=auth&action=logout">
-                    <i class='bx bx-log-out'></i>
-                </a>
+            <div class="dropdown">
+                <button class="btn btn-sm btn-warning text-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class='bx bx-category' ></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="?mod=cart">Cart</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="?mod=auth&action=logout">Logout</a></li>
+                </ul>
             </div>
         </div>
     </div>
