@@ -1,31 +1,22 @@
 <?php
-    function add_cart($id){
-        $quantity = isset($_POST['num-order']) ? $_POST['num-order'] : 1 ;
-        $value = get_cats($id);
-        $quantity=1;
-        
+    function add_cart($id, $quantity, $arr_data)
+    {
         if(isset($_SESSION['cart']['buy'][$id])) {
             $quantity = $_SESSION['cart']['buy'][$id]['quantity'] += $quantity;
         }
-        $_SESSION['cart']['buy'][$id] = [
-            'id' => $value['id'],
-            'code' => $value['code'],
-            'name' => $value['produc_title'],
-            'img' => $value['produc_img'],
-            'price' => $value['price'],
-            'total_price' => $value['price'] * $quantity,
-            'quantity' => $quantity,
-            'url_detail' => $value['url_add_cart']
-        ];
+
+        $_SESSION['cart']['buy'][$id] = $arr_data;
         update_info_carrt();
     }
 
-    function delete_cart($id){
+    function delete_cart($id)
+    {
         unset($_SESSION['cart']['buy'][$id]);   
         update_info_carrt();
     }
 
-    function update_info_carrt(){
+    function update_info_carrt()
+    {
         $total =0;
         $number_order =0;
         if($_SESSION['cart']){
@@ -40,11 +31,13 @@
         };
     }
 
-    function delete_cart_all(){
+    function delete_cart_all()
+    {
         unset($_SESSION['cart']);
     }
     
-    function update_cart($data){
+    function update_cart($data)
+    {
         // $data=(int)$_POST['id'];
         global $quantity;
     

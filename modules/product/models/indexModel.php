@@ -6,5 +6,5 @@
 
     function fetch_products($key_search)
     {
-        return db_fetch_array("SELECT * FROM `products` WHERE `prodc_name` LIKE '%$key_search%'");
+        return db_fetch_array("SELECT * FROM `products` WHERE `prodc_title` LIKE '%$key_search%'");
     }

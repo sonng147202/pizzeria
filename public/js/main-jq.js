@@ -5,16 +5,28 @@ $(document).ready(function () {
             .then(response => response.json())
             .then(data => {
                 const arr = data.arr_products;
+
+                console.log(data);
                 
                 const str = $.map(arr, function (element) {
                     var price = parseInt(element.prodc_price).toLocaleString('vi-VN');
 
-                    return `<div class="card">
-                                <img src="${element.prodc_img}" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-truncate">${element.prodc_name}</h5>
-                                    <p class="card-text">${price}₫</p>
-                                    <a href="#" class="btn btn-warning">Add to cart</a>
+                    return `<div class="col-md-6 col-lg-4 mb-3">
+                                <div class="card">
+                                    <img src="${element.prodc_img}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-truncate">${element.prodc_title}</h5>
+                                        <p class="card-text">${price}₫</p>
+                                        <form action="" method="get">
+                                            <select class="form-select mb-3" aria-label="Default select example">
+                                                <option selected>Choose a size</option>
+                                                <option value="1">S</option>
+                                                <option value="2">M</option>
+                                                <option value="3">L</option>
+                                            </select>
+                                            <button type="button" class="btn btn-warning">Add to cart</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>`;
                 });
